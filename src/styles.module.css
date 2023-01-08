@@ -1,0 +1,25 @@
+table, th, td {
+    border: 1px solid black;
+    
+  }
+
+table{
+    max-width: 80%;
+    margin: 0 auto;
+}
+th,td{
+    padding: 5px;
+    text-align: center;
+}
+.green{
+    background: rgb(147, 236, 147);
+}
+.yellow{
+    background: yellow;
+}
+.smallCard{
+    padding: 15px;
+    font-size: 10px;
+    max-width: 70%;
+    margin: 0 auto;
+}
