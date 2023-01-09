@@ -5,15 +5,15 @@ const DisplayStockRates = () => {
   const [stockArray, setStockArray] = useState([]);
 
   const [currentTime, setLatestTime] = useState();
-  const [latestUSD, setLatestUSD] = useState(0);
-  const [latestGBP, setLatestGBP] = useState(0);
-  const [latestEUR, setLatestEUR] = useState(0);
+  const [latestUSD, setLatestUSD] = useState(null);
+  const [latestGBP, setLatestGBP] = useState(null);
+  const [latestEUR, setLatestEUR] = useState(null);
 
   const [riseInUSD, setRiseInUSD] = useState(false);
   const [riseInGBP, setRiseInGBP] = useState(false);
   const [riseInEUR, setRiseInEUR] = useState(false);
 
-  //to store previous rates
+  //to remember previous rates
   const prevRateUSD = useRef(null);
   const prevRateEUR = useRef(null);
   const prevRateGBP = useRef(null);
@@ -46,6 +46,7 @@ const DisplayStockRates = () => {
       compareRates(prevRateGBP.current, fetchedDetails.bpi.GBP.rate, setRiseInGBP, riseInGBP);
       compareRates(prevRateEUR.current, fetchedDetails.bpi.EUR.rate,setRiseInEUR,riseInEUR);
 
+      //assigning previous rates to ref
       prevRateUSD.current = latestUSD;
       prevRateGBP.current = latestGBP;
       prevRateEUR.current = latestEUR;
